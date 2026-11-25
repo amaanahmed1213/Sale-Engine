@@ -47,9 +47,10 @@ class Pipeline:
         return ""
 
     def match_category(self, item: Listing) -> str:
-        t = _norm(item.title)
+        t = f" {_norm(item.title)} "
         for name, c in self.cfg["categories"].items():
-            if any(_norm(k) in t for k in c["keywords"]):
+            # keyword must start at a word boundary ("l s" shouldn't match "chill short")
+            if any(re.search(r"(?<![a-z0-9])" + re.escape(_norm(k)), t) for k in c["keywords"]):
                 return name
         return ""
 
