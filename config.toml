@@ -31,7 +31,8 @@ max_price = 110
 [filters]
 exclude = ["factory", "outlet exclusive", "made for outlet", "kids", "boys", "girls", "women", "womens",
            "lauren ralph lauren", "polo prepster", "final sale - damaged", "gift card", "socks", "underwear",
-           "j crew factory", "jcrew factory", "vince camuto"]   # Vince Camuto is a different, cheaper brand
+           "j crew factory", "jcrew factory", "vince camuto",
+           "sock", "short", "shorts", "swim", "boxer", "brief", "beanie", "legging"]   # Vince Camuto is a different, cheaper brand
 # Fabric check: for non-athletic brands, flag tops that are mostly synthetic.
 good_fabrics = ["cotton", "pima", "supima", "merino", "cashmere", "linen", "wool", "silk", "tencel", "lyocell", "modal"]
 
