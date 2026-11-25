@@ -1,54 +1,36 @@
     reddit: failed (HTTPError)
     homepage: failed (Error)
-    web search: failed (ConnectTimeout)
   lululemon        0 sightings
     reddit: failed (HTTPError)
-    web search: failed (ConnectTimeout)
   vuori            0 sightings
     reddit: failed (HTTPError)
-    web search: failed (ConnectTimeout)
   rag & bone       0 sightings
     reddit: failed (HTTPError)
-    web search: failed (ConnectTimeout)
   frame            0 sightings
     reddit: failed (HTTPError)
-    web search: failed (ConnectTimeout)
   ag               0 sightings
     reddit: failed (HTTPError)
-    web search: failed (ConnectTimeout)
   theory           0 sightings
     reddit: failed (HTTPError)
-    web search: failed (ConnectTimeout)
   ralph lauren     0 sightings
     reddit: failed (HTTPError)
-    web search: failed (ConnectTimeout)
-  banana republic  1 sightings
+  banana republic  0 sightings
     reddit: failed (HTTPError)
-    web search: failed (ConnectTimeout)
   quince           0 sightings
     reddit: failed (HTTPError)
-    web search: failed (ConnectTimeout)
   abercrombie      0 sightings
     reddit: failed (HTTPError)
-    web search: failed (ConnectTimeout)
   alo              0 sightings
     reddit: failed (HTTPError)
-    web search: failed (ConnectTimeout)
   rhone            0 sightings
     reddit: failed (HTTPError)
-    web search: failed (ConnectTimeout)
   buck mason       0 sightings
     reddit: failed (HTTPError)
-    web search: failed (ConnectTimeout)
   j crew           1 sightings
     reddit: failed (HTTPError)
-    web search: failed (ConnectTimeout)
   vince            0 sightings
 
 Codes (confidence · % · last seen · where):
-
-  BANANA REPUBLIC
-     55  SUSTAINABILITY        ?   0d ago  brand homepage  ← NEW
 
   J CREW
      55  PRIVACY               ?   0d ago  brand homepage
@@ -94,9 +76,9 @@ Call log:
   - navigating to "https://shop.lululemon.com/c/men-we-made-too-much/n1nrqwznskl", waiting until "domcontentloaded"
 
 → Vuori                          0 listings →   0 match your brands/style
-→ FRAME                         64 listings →  37 match your brands/style
+→ FRAME                         64 listings →  35 match your brands/style
 → rag & bone                     0 listings →   0 match your brands/style
-→ AG Jeans                     474 listings → 356 match your brands/style
+→ AG Jeans                     474 listings → 334 match your brands/style
 → Theory                         0 listings →   0 match your brands/style
 → Ralph Lauren                   0 listings →   0 match your brands/style
 → Banana Republic                0 listings →   0 match your brands/style
@@ -118,14 +100,9 @@ requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://www.
 → Buck Mason                     0 listings →   0 match your brands/style
 → J.Crew                         0 listings →   0 match your brands/style
 → Vince                          0 listings →   0 match your brands/style
-→ Alo                          200 listings → 115 match your brands/style
+→ Alo                          200 listings →  93 match your brands/style
 
 Top deals:
-  [67] Alo — Unisex Half-Crew Understated Sock - Mushroom: $16 (was $32) @ Alo
-  [67] Alo — Chill Short - Marathon Blue: $39 (was $78) @ Alo
-  [60] Alo — Unisex Half-Crew Throwback Sock - Smoky Quartz/White: $17 (was $34) @ Alo
-  [60] Alo — Chill Short - Burgundy Truffle: $31 (was $78) @ Alo
-  [60] Alo — Chill Short - Charcoal Green: $31 (was $78) @ Alo
   [60] Alo — Cargo Ripstop Trouser - Bone: $47 (was $118) @ Alo
   [60] Alo — Cargo Ripstop Trouser - Espresso: $47 (was $118) @ Alo
   [60] Alo — Elevate Waffle Long Sleeve Crew - Bone: $51 (was $128) @ Alo
@@ -136,5 +113,10 @@ Top deals:
   [55] Ag — Wesley Crew: $55 (was $78) @ AG Jeans
   [55] Ag — Wesley Crew: $55 (was $78) @ AG Jeans
   [55] Ag — Wesley Crew: $55 (was $78) @ AG Jeans
+  [55] Ag — Bryce Crew: $62 (was $88) @ AG Jeans
+  [52] Frame — Pyjama Pants -- Beige Stripe: $107 (was $268) @ FRAME
+  [52] Frame — Baggy Jean -- Momentum: $119 (was $298) @ FRAME
+  [52] Alo — Scholar Straight Leg Sweatpant - Mushroom Heather: $94 (was $188) @ Alo
+  [47] Ag — Wesley Crew: $55 (was $78) @ AG Jeans
 
 Full report: deals.html
