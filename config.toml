@@ -15,7 +15,7 @@ email_to    = ""               # optional; needs SMTP_* env vars (see README)
 # What you actually shop for. A product must match at least one category.
 # max_price = "I'd buy this without thinking" ceiling. Deals under it get a score bonus.
 [categories.pants]
-keywords  = ["abc", "pant", "chino", "trouser", "jogger", "commission", "meta", "5-pocket", "five pocket"]
+keywords  = ["abc", "pant", "sweatpant", "trackpant", "chino", "trouser", "jogger", "commission", "meta", "5-pocket", "five pocket"]
 max_price = 90
 [categories.henley]
 keywords  = ["henley", "waffle"]
