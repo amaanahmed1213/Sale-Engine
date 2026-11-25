@@ -1,0 +1,236 @@
+# ─────────────────────────────────────────────────────────────
+#  Sale Engine config — edit this, not the code.
+# ─────────────────────────────────────────────────────────────
+
+[me]
+sizes_tops    = ["M"]          # sizes you wear; deals out of stock in your size are dropped
+sizes_bottoms = ["32", "32x32", "M"]
+gender        = "men"
+
+[alerts]
+min_score   = 60               # only push deals scoring >= this (60 = good, 75+ = rare)
+ntfy_topic  = ""               # free phone push: install the ntfy app, pick a random topic name, paste it here
+email_to    = ""               # optional; needs SMTP_* env vars (see README)
+
+# What you actually shop for. A product must match at least one category.
+# max_price = "I'd buy this without thinking" ceiling. Deals under it get a score bonus.
+[categories.pants]
+keywords  = ["abc", "pant", "chino", "trouser", "jogger", "commission", "meta", "5-pocket", "five pocket"]
+max_price = 90
+[categories.henley]
+keywords  = ["henley", "waffle"]
+max_price = 60
+[categories.long_sleeve]
+keywords  = ["long sleeve", "long-sleeve", "l/s", "crew", "tee", "polo", "sweater", "knit"]
+max_price = 70
+[categories.jeans]
+keywords  = ["jean", "denim"]
+max_price = 110
+
+# Words that disqualify a listing no matter what.
+[filters]
+exclude = ["factory", "outlet exclusive", "made for outlet", "kids", "boys", "girls", "women", "womens",
+           "lauren ralph lauren", "polo prepster", "final sale - damaged", "gift card", "socks", "underwear",
+           "j crew factory", "jcrew factory", "vince camuto"]   # Vince Camuto is a different, cheaper brand
+# Fabric check: for non-athletic brands, flag tops that are mostly synthetic.
+good_fabrics = ["cotton", "pima", "supima", "merino", "cashmere", "linen", "wool", "silk", "tencel", "lyocell", "modal"]
+
+# ─── Discount codes ──────────────────────────────────────────
+# `python run.py codes` searches these, dates every sighting, and ranks codes by confidence.
+# Codes are applied to prices from the brand's OWN site only (they rarely work at Rack/Gilt).
+[codes]
+days                 = 21          # ignore sightings older than this
+apply_min_confidence = 45          # codes below this are listed but not applied to prices
+alert_min_confidence = 55
+subreddits           = ["frugalmalefashion", "malefashionadvice", "lululemon", "Coupons", "deals", "abercrombie"]
+web_search           = true        # searches "brand discount code tiktok" like Google would; dates come from the TikTok URL
+tiktok               = false       # experimental direct TikTok scrape; set true and run with --headful
+# Brand homepages to check for "use code ___" banners
+[codes.homepages]
+"abercrombie"     = "https://www.abercrombie.com/shop/us"
+"alo"             = "https://www.aloyoga.com"
+"j crew"          = "https://www.jcrew.com"
+"banana republic" = "https://bananarepublic.gap.com"
+"lululemon"       = "https://shop.lululemon.com"
+"vuori"           = "https://vuoriclothing.com"
+
+# Optional coupon-aggregator pages (these often repost influencer/TikTok codes). Add any you like.
+[codes.coupon_pages]
+"abercrombie" = "https://www.knoji.com/promo-codes/abercrombie-and-fitch/"
+"alo"         = "https://www.knoji.com/promo-codes/alo-yoga/"
+
+# ─── Brands ───────────────────────────────────────────────────
+# typical_sale = how deep this brand discounts on a normal week.
+# A deal only counts as "good" when it beats this, so a 25% Abercrombie
+# sale (which happens most weeks) doesn't get flagged like a rare 25% Quince markdown.
+# athletic = true skips the cotton check (lulu/vuori are synthetic by design).
+[brands."lululemon"]
+aliases      = ["lululemon athletica"]
+typical_sale = 0.25
+athletic     = true
+[brands."vuori"]
+typical_sale = 0.20
+athletic     = true
+[brands."rag & bone"]
+aliases      = ["rag and bone", "rag&bone"]
+typical_sale = 0.35
+[brands."frame"]
+typical_sale = 0.30
+[brands."ag"]
+aliases      = ["ag jeans", "adriano goldschmied", "ag adriano goldschmied"]
+typical_sale = 0.30
+[brands."theory"]
+typical_sale = 0.30
+[brands."ralph lauren"]
+aliases      = ["polo ralph lauren", "polo by ralph lauren", "rrl", "purple label"]
+typical_sale = 0.30
+[brands."banana republic"]
+typical_sale = 0.40            # BR runs 30–40% off almost constantly
+[brands."quince"]
+typical_sale = 0.05            # rarely discounts, so any markdown is notable
+[brands."abercrombie"]
+aliases      = ["abercrombie & fitch", "abercrombie and fitch", "a&f"]
+typical_sale = 0.25            # 20–25% off sitewide is nearly every week
+[brands."alo"]
+aliases      = ["alo yoga"]
+typical_sale = 0.20
+athletic     = true
+[brands."rhone"]
+typical_sale = 0.15            # rarely discounts outside big events
+athletic     = true
+[brands."buck mason"]
+typical_sale = 0.10            # almost never runs sitewide sales
+[brands."j crew"]
+aliases      = ["j.crew", "jcrew", "j. crew"]
+typical_sale = 0.40            # 30–40% off is constant; main line only (Factory excluded)
+[brands."vince"]
+typical_sale = 0.30
+
+# ─── Sources ──────────────────────────────────────────────────
+# kind = "shopify"  → brand runs on Shopify; reads /products.json (fast, reliable, has compare-at prices)
+# kind = "page"     → any sale/search page; rendered in a real browser, products read from
+#                     JSON-LD or the CSS selectors below
+# Run `python run.py probe` to check which brand sites are Shopify.
+# Sale URLs change; if a source returns 0 items, open the URL and update it.
+
+[[sources]]
+name  = "Nordstrom Rack"
+kind  = "page"
+urls  = ["https://www.nordstromrack.com/shop/Men/Clothing?sort=Newest"]
+card  = "article"
+title = "h3"
+brand_sel = "[class*='brand'], [data-testid*='brand']"
+price = "[class*='price'], [data-testid*='price']"
+link  = "a"
+
+[[sources]]
+name  = "Gilt"
+kind  = "page"
+urls  = ["https://www.gilt.com/boutique/men"]
+card  = "[class*='product']"
+title = "[class*='name']"
+brand_sel = "[class*='brand']"
+price = "[class*='price']"
+link  = "a"
+
+[[sources]]
+name = "Nordstrom (sale)"
+kind = "page"
+urls = ["https://www.nordstrom.com/browse/men/clothing/sale"]
+
+[[sources]]
+name = "lululemon We Made Too Much"
+kind = "page"
+brand = "lululemon"
+urls = ["https://shop.lululemon.com/c/men-we-made-too-much/n1nrqwznskl"]
+
+[[sources]]
+name   = "Vuori"
+kind   = "shopify"
+brand  = "vuori"
+domain = "vuoriclothing.com"
+collection = "sale"            # leave "" to scan everything
+
+[[sources]]
+name   = "FRAME"
+kind   = "shopify"
+brand  = "frame"
+domain = "frame-store.com"
+collection = "mens-sale"
+
+[[sources]]
+name   = "rag & bone"
+kind   = "shopify"
+brand  = "rag & bone"
+domain = "www.rag-bone.com"
+collection = "mens-sale"
+
+[[sources]]
+name   = "AG Jeans"
+kind   = "shopify"
+brand  = "ag"
+domain = "www.agjeans.com"
+collection = "mens-sale"
+
+[[sources]]
+name = "Theory"
+kind = "page"
+brand = "theory"
+urls = ["https://www.theory.com/men/sale/"]
+
+[[sources]]
+name = "Ralph Lauren"
+kind = "page"
+brand = "ralph lauren"
+urls = ["https://www.ralphlauren.com/men-sale"]
+
+[[sources]]
+name = "Banana Republic"
+kind = "page"
+brand = "banana republic"
+urls = ["https://bananarepublic.gap.com/browse/men/sale"]
+
+[[sources]]
+name = "Quince"
+kind = "page"
+brand = "quince"
+urls = ["https://www.quince.com/men/sale"]
+
+[[sources]]
+name = "Abercrombie"
+kind = "page"
+brand = "abercrombie"
+urls = ["https://www.abercrombie.com/shop/us/mens-sale"]
+
+[[sources]]
+name   = "Rhone"
+kind   = "shopify"
+brand  = "rhone"
+domain = "www.rhone.com"
+collection = "sale"
+
+[[sources]]
+name   = "Buck Mason"
+kind   = "shopify"
+brand  = "buck mason"
+domain = "www.buckmason.com"
+collection = "sale"
+
+[[sources]]
+name = "J.Crew"
+kind = "page"
+brand = "j crew"
+urls = ["https://www.jcrew.com/plp/mens/categories/sale"]
+
+[[sources]]
+name = "Vince"
+kind = "page"
+brand = "vince"
+urls = ["https://www.vince.com/men/sale"]
+
+[[sources]]
+name   = "Alo"
+kind   = "shopify"
+brand  = "alo"
+domain = "www.aloyoga.com"
+collection = "mens-sale"
