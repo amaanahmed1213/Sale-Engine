@@ -14,6 +14,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 import tomllib
 import traceback
@@ -27,7 +28,43 @@ from engine.sources import page, shopify
 
 def load_cfg(path="config.toml") -> dict:
     with open(path, "rb") as f:
-        return tomllib.load(f)
+        cfg = tomllib.load(f)
+    cfg["alerts"]["ntfy_topic"] = os.getenv("NTFY_TOPIC") or cfg["alerts"].get("ntfy_topic", "")
+    return cfg
+
+
+def sync_watchlist_file(db, path="watchlist.txt"):
+    """watchlist.txt (editable on github.com) is the source of truth for tracked items."""
+    if not os.path.exists(path):
+        return
+    wanted = {}
+    for ln in open(path, encoding="utf-8"):
+        ln = ln.strip()
+        if not ln or ln.startswith("#"):
+            continue
+        parts = ln.split()
+        try:
+            wanted[parts[0]] = float(parts[1].lstrip("$"))
+        except (IndexError, ValueError):
+            print(f"  skipping watchlist line (needs: link price): {ln[:60]}")
+    for w in db.watchlist():
+        if w["url"] not in wanted:
+            db.unwatch(w["url"])
+    for url, target in wanted.items():
+        db.watch(url, target)
+
+
+def site_extras(db, cfg):
+    codes = [dict(r) for r in db.conn.execute(
+        "SELECT * FROM codes WHERE newest >= date('now', ?) ORDER BY brand, confidence DESC",
+        (f"-{cfg.get('codes', {}).get('days', 21)} days",)).fetchall()]
+    watch = []
+    for w in db.watchlist():
+        r = db.conn.execute("""SELECT p.title, pr.price FROM products p JOIN prices pr ON p.uid=pr.uid
+                               WHERE p.url=? ORDER BY pr.day DESC LIMIT 1""", (w["url"].split("?")[0].rstrip("/"),)).fetchone()
+        watch.append({"url": w["url"], "target": w["target"],
+                      "title": r["title"] if r else w["url"], "price": r["price"] if r else None})
+    return codes, watch
 
 
 def fetch_source(src: dict) -> list[Listing]:
@@ -56,7 +93,9 @@ def cmd_scan(cfg, db, only=None, headful=False):
                 traceback.print_exc()
 
     everything.sort(key=lambda x: -x.score)
-    path = report.write(everything)
+    sync_watchlist_file(db)
+    codes, watch = site_extras(db, cfg)
+    path = report.write(everything, codes=codes, watch=watch)
     print(f"\nTop deals:")
     for it in everything[:15]:
         print("  " + alerts.line(it))
@@ -99,6 +138,7 @@ def fetch_single(url: str) -> Listing | None:
 
 
 def cmd_check(cfg, db):
+    sync_watchlist_file(db)
     hits = []
     for w in db.watchlist():
         try:
@@ -109,6 +149,7 @@ def cmd_check(cfg, db):
         if not it:
             print(f"  ? couldn't read price: {w['url'][:70]}")
             continue
+        it.url = w["url"].split("?")[0].rstrip("/")     # so the site can match it back to the watchlist
         db.record(it)
         hit = it.price <= w["target"]
         st = db.stats(it.uid)
