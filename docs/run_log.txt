@@ -14,7 +14,7 @@
     reddit: failed (HTTPError)
   ralph lauren     0 sightings
     reddit: failed (HTTPError)
-  banana republic  0 sightings
+  banana republic  1 sightings
     reddit: failed (HTTPError)
   quince           0 sightings
     reddit: failed (HTTPError)
@@ -32,6 +32,9 @@
 
 Codes (confidence · % · last seen · where):
 
+  BANANA REPUBLIC
+     55  SUSTAINABILITY        ?   0d ago  brand homepage
+
   J CREW
      55  PRIVACY               ?   0d ago  brand homepage
 → Nordstrom Rack                 0 listings →   0 match your brands/style
@@ -39,10 +42,10 @@ Codes (confidence · % · last seen · where):
 → Nordstrom (sale)               0 listings →   0 match your brands/style
 → lululemon We Made Too Much    failed: Error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://shop.lululemon.com/c/men-we-made-too-m
 Traceback (most recent call last):
-  File "/home/runner/work/Sale-Engine/Sale-Engine/run.py", line 49, in cmd_scan
+  File "/home/runner/work/Sale-Engine/Sale-Engine/run.py", line 86, in cmd_scan
     raw = fetch_source(src)
           ^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/Sale-Engine/Sale-Engine/run.py", line 36, in fetch_source
+  File "/home/runner/work/Sale-Engine/Sale-Engine/run.py", line 73, in fetch_source
     return page.fetch(src)
            ^^^^^^^^^^^^^^^
   File "/home/runner/work/Sale-Engine/Sale-Engine/engine/sources/page.py", line 41, in fetch
@@ -86,10 +89,10 @@ Call log:
 → Abercrombie                    0 listings →   0 match your brands/style
 → Rhone                         failed: HTTPError: 403 Client Error: Forbidden for url: https://www.rhone.com/collections/sale/products.json?
 Traceback (most recent call last):
-  File "/home/runner/work/Sale-Engine/Sale-Engine/run.py", line 49, in cmd_scan
+  File "/home/runner/work/Sale-Engine/Sale-Engine/run.py", line 86, in cmd_scan
     raw = fetch_source(src)
           ^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/Sale-Engine/Sale-Engine/run.py", line 35, in fetch_source
+  File "/home/runner/work/Sale-Engine/Sale-Engine/run.py", line 72, in fetch_source
     return shopify.fetch(src)
            ^^^^^^^^^^^^^^^^^^
   File "/home/runner/work/Sale-Engine/Sale-Engine/engine/sources/shopify.py", line 32, in fetch
@@ -119,4 +122,4 @@ Top deals:
   [52] Alo — Scholar Straight Leg Sweatpant - Mushroom Heather: $94 (was $188) @ Alo
   [47] Ag — Wesley Crew: $55 (was $78) @ AG Jeans
 
-Full report: deals.html
+Full report: docs/index.html
