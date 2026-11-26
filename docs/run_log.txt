@@ -14,7 +14,7 @@
     reddit: failed (HTTPError)
   ralph lauren     0 sightings
     reddit: failed (HTTPError)
-  banana republic  1 sightings
+  banana republic  0 sightings
     reddit: failed (HTTPError)
   quince           0 sightings
     reddit: failed (HTTPError)
@@ -32,12 +32,9 @@
 
 Codes (confidence · % · last seen · where):
 
-  BANANA REPUBLIC
-     55  SUSTAINABILITY        ?   0d ago  brand homepage
-
   J CREW
      55  PRIVACY               ?   0d ago  brand homepage
-→ Nordstrom Rack                 0 listings →   0 match your brands/style
+→ Nordstrom Rack                 3 listings →   0 match your brands/style
 → Gilt                           0 listings →   0 match your brands/style
 → Nordstrom (sale)               0 listings →   0 match your brands/style
 → lululemon We Made Too Much    failed: Error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://shop.lululemon.com/c/men-we-made-too-m
@@ -118,9 +115,8 @@ Top deals:
   [80] Ag — Wesley Crew: $55 (was $78) @ AG Jeans
   [80] Ag — Bryce Crew: $62 (was $88) @ AG Jeans
   [77] Frame — Pyjama Pants -- Beige Stripe: $107 (was $268) @ FRAME
-  [77] Frame — Baggy Jean -- Momentum: $119 (was $298) @ FRAME
   [77] Alo — Scholar Straight Leg Sweatpant - Mushroom Heather: $94 (was $188) @ Alo
   [72] Ag — Wesley Crew: $55 (was $78) @ AG Jeans
+  [72] Ag — Bryce Crew: $55 (was $78) @ AG Jeans
 
 Full report: docs/index.html
-Alerted on 20 new deal(s).
