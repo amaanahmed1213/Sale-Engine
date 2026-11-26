@@ -103,23 +103,24 @@ requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://www.
 → Buck Mason                     0 listings →   0 match your brands/style
 → J.Crew                         0 listings →   0 match your brands/style
 → Vince                          0 listings →   0 match your brands/style
-→ Alo                          200 listings →  93 match your brands/style
+→ Alo                          202 listings →  93 match your brands/style
 
 Top deals:
-  [60] Alo — Cargo Ripstop Trouser - Bone: $47 (was $118) @ Alo
-  [60] Alo — Cargo Ripstop Trouser - Espresso: $47 (was $118) @ Alo
-  [60] Alo — Elevate Waffle Long Sleeve Crew - Bone: $51 (was $128) @ Alo
-  [60] Alo — Conquer Reform Long Sleeve With Hood - Bluestone: $54 (was $108) @ Alo
-  [60] Alo — Triumph Restore Sweatpant - Black: $54 (was $108) @ Alo
-  [60] Alo — Co-Op Pant (Long) - Charcoal Green: $55 (was $138) @ Alo
-  [60] Alo — Northstar Cargo Pant - Black: $74 (was $148) @ Alo
-  [55] Ag — Wesley Crew: $55 (was $78) @ AG Jeans
-  [55] Ag — Wesley Crew: $55 (was $78) @ AG Jeans
-  [55] Ag — Wesley Crew: $55 (was $78) @ AG Jeans
-  [55] Ag — Bryce Crew: $62 (was $88) @ AG Jeans
-  [52] Frame — Pyjama Pants -- Beige Stripe: $107 (was $268) @ FRAME
-  [52] Frame — Baggy Jean -- Momentum: $119 (was $298) @ FRAME
-  [52] Alo — Scholar Straight Leg Sweatpant - Mushroom Heather: $94 (was $188) @ Alo
-  [47] Ag — Wesley Crew: $55 (was $78) @ AG Jeans
+  [85] Alo — Cargo Ripstop Trouser - Bone: $47 (was $118) @ Alo
+  [85] Alo — Cargo Ripstop Trouser - Espresso: $47 (was $118) @ Alo
+  [85] Alo — Elevate Waffle Long Sleeve Crew - Bone: $51 (was $128) @ Alo
+  [85] Alo — Conquer Reform Long Sleeve With Hood - Bluestone: $54 (was $108) @ Alo
+  [85] Alo — Triumph Restore Sweatpant - Black: $54 (was $108) @ Alo
+  [85] Alo — Co-Op Pant (Long) - Charcoal Green: $55 (was $138) @ Alo
+  [85] Alo — Northstar Cargo Pant - Black: $74 (was $148) @ Alo
+  [80] Ag — Wesley Crew: $55 (was $78) @ AG Jeans
+  [80] Ag — Wesley Crew: $55 (was $78) @ AG Jeans
+  [80] Ag — Wesley Crew: $55 (was $78) @ AG Jeans
+  [80] Ag — Bryce Crew: $62 (was $88) @ AG Jeans
+  [77] Frame — Pyjama Pants -- Beige Stripe: $107 (was $268) @ FRAME
+  [77] Frame — Baggy Jean -- Momentum: $119 (was $298) @ FRAME
+  [77] Alo — Scholar Straight Leg Sweatpant - Mushroom Heather: $94 (was $188) @ Alo
+  [72] Ag — Wesley Crew: $55 (was $78) @ AG Jeans
 
 Full report: docs/index.html
+Alerted on 20 new deal(s).
