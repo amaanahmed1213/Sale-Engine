@@ -34,7 +34,7 @@ Codes (confidence · % · last seen · where):
 
   J CREW
      55  PRIVACY               ?   0d ago  brand homepage
-→ Nordstrom Rack                 3 listings →   0 match your brands/style
+→ Nordstrom Rack                 0 listings →   0 match your brands/style
 → Gilt                           0 listings →   0 match your brands/style
 → Nordstrom (sale)               0 listings →   0 match your brands/style
 → lululemon We Made Too Much    failed: Error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://shop.lululemon.com/c/men-we-made-too-m
@@ -100,7 +100,7 @@ requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://www.
 → Buck Mason                     0 listings →   0 match your brands/style
 → J.Crew                         0 listings →   0 match your brands/style
 → Vince                          0 listings →   0 match your brands/style
-→ Alo                          202 listings →  93 match your brands/style
+→ Alo                          201 listings →  93 match your brands/style
 
 Top deals:
   [85] Alo — Cargo Ripstop Trouser - Bone: $47 (was $118) @ Alo
