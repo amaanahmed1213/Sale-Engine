@@ -1,6 +1,6 @@
     reddit: failed (HTTPError)
     homepage: failed (Error)
-  lululemon        2 sightings
+  lululemon        0 sightings
     reddit: failed (HTTPError)
   vuori            0 sightings
     reddit: failed (HTTPError)
@@ -37,10 +37,6 @@ Codes (confidence · % · last seen · where):
 
   J CREW
      55  PRIVACY               ?   0d ago  brand homepage
-
-  LULULEMON
-     24  VERIFIED            30%  10d ago  web search  ← NEW
-     24  UNLOCK              30%  10d ago  web search  ← NEW
 → Nordstrom Rack                 0 listings →   0 match your brands/style
 → Gilt                           0 listings →   0 match your brands/style
 → Nordstrom (sale)               0 listings →   0 match your brands/style
@@ -85,7 +81,7 @@ Call log:
 → Vuori                          0 listings →   0 match your brands/style
 → FRAME                         64 listings →  35 match your brands/style
 → rag & bone                     0 listings →   0 match your brands/style
-→ AG Jeans                     474 listings → 334 match your brands/style
+→ AG Jeans                     475 listings → 335 match your brands/style
 → Theory                         0 listings →   0 match your brands/style
 → Ralph Lauren                   0 listings →   0 match your brands/style
 → Banana Republic                0 listings →   0 match your brands/style
@@ -107,7 +103,7 @@ requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://www.
 → Buck Mason                     0 listings →   0 match your brands/style
 → J.Crew                         0 listings →   0 match your brands/style
 → Vince                          0 listings →   0 match your brands/style
-→ Alo                          202 listings →  93 match your brands/style
+→ Alo                          201 listings →  93 match your brands/style
 
 Top deals:
   [85] Alo — Cargo Ripstop Trouser - Bone: $47 (was $118) @ Alo
