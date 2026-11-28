@@ -1,6 +1,6 @@
     reddit: failed (HTTPError)
     homepage: failed (Error)
-  lululemon        0 sightings
+  lululemon        2 sightings
     reddit: failed (HTTPError)
   vuori            0 sightings
     reddit: failed (HTTPError)
@@ -14,7 +14,7 @@
     reddit: failed (HTTPError)
   ralph lauren     0 sightings
     reddit: failed (HTTPError)
-  banana republic  1 sightings
+  banana republic  0 sightings
     reddit: failed (HTTPError)
   quince           0 sightings
     reddit: failed (HTTPError)
@@ -32,11 +32,12 @@
 
 Codes (confidence · % · last seen · where):
 
-  BANANA REPUBLIC
-     55  SUSTAINABILITY        ?   0d ago  brand homepage
-
   J CREW
      55  PRIVACY               ?   0d ago  brand homepage
+
+  LULULEMON
+     24  VERIFIED            30%  10d ago  web search
+     24  SAVE                30%  10d ago  web search  ← NEW
 → Nordstrom Rack                 0 listings →   0 match your brands/style
 → Gilt                           0 listings →   0 match your brands/style
 → Nordstrom (sale)               0 listings →   0 match your brands/style
@@ -103,11 +104,10 @@ requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://www.
 → Buck Mason                     0 listings →   0 match your brands/style
 → J.Crew                         0 listings →   0 match your brands/style
 → Vince                          0 listings →   0 match your brands/style
-→ Alo                          201 listings →  93 match your brands/style
+→ Alo                          198 listings →  93 match your brands/style
 
 Top deals:
   [85] Alo — Cargo Ripstop Trouser - Bone: $47 (was $118) @ Alo
-  [85] Alo — Cargo Ripstop Trouser - Espresso: $47 (was $118) @ Alo
   [85] Alo — Elevate Waffle Long Sleeve Crew - Bone: $51 (was $128) @ Alo
   [85] Alo — Conquer Reform Long Sleeve With Hood - Bluestone: $54 (was $108) @ Alo
   [85] Alo — Triumph Restore Sweatpant - Black: $54 (was $108) @ Alo
@@ -121,5 +121,6 @@ Top deals:
   [72] Ag — Wesley Crew: $55 (was $78) @ AG Jeans
   [72] Ag — Bryce Crew: $55 (was $78) @ AG Jeans
   [72] Ag — Bryce Crew: $62 (was $88) @ AG Jeans
+  [71] Ag — Reggie 360° Jean: $113 (was $225) @ AG Jeans
 
 Full report: docs/index.html
